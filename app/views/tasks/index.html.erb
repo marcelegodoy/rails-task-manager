@@ -1,0 +1,12 @@
+<h1>Tasks 📝</h1>
+<% @tasks.each do |task| %>
+  <% if task.completed == true %>
+    <h3>🔳 Done - <%= link_to task.title, task_path(task) %></h3>
+    <p><%= task.details %></p>
+  <% else %>
+    <h3>⬜️ To do - <%= link_to task.title, task_path(task) %></h3>
+    <p><%= task.details %></p>
+  <% end %>
+<% end %>
+
+<%= link_to "Add new task", tasks_new_path %>
